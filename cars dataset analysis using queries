@@ -1,0 +1,36 @@
+#1.Select the count of different type of cars
+select name,count(name) 
+from car_data 
+group by name;
+
+#2.write a query to find the count of different fuel type vechiles
+select fuel,count(name) 
+from car_data 
+group by fuel;
+
+
+#3.write a query cars which having low price and high milege with limit 10
+select name,sellin_price,mileae 
+from car_data 
+order by sellin_price asc,mileae desc limit 10;
+
+#4.write a query to find the avg selling price,km_driven,milage 
+select name,round(avg(sellin_price)),round(avg(km_driven)),round(avg(mileae)) 
+from car_data 
+group by name;
+
+#5.write a query to find no of cars for different owners 
+select owner,count(owner) 
+from car_data
+group by owner;
+
+#6.write a query to find Top 10 cars according to milage  
+select name,mileae
+from car_data
+order by mileae desc limit 10;
+
+#7.write a query to find no of cars in all the years
+select year,count(year) count
+from car_data 
+group by year
+order by year asc;
